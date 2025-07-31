@@ -167,7 +167,7 @@
       output_price: 0
       supports_vision: true
       supports_function_calling: true
-    - name: gemini-2.5-flash-lite-preview-06-17
+    - name: gemini-2.5-flash-lite
       max_input_tokens: 1000000
       max_output_tokens: 64000
       input_price: 0
@@ -319,6 +319,11 @@
       max_input_tokens: 40960
       input_price: 0.5
       output_price: 1.5
+    - name: devstral-medium-latest
+      max_input_tokens: 256000
+      input_price: 0.4
+      output_price: 2
+      supports_function_calling: true
     - name: devstral-small-latest
       max_input_tokens: 256000
       input_price: 0.1
@@ -403,24 +408,28 @@
 #  - https://docs.x.ai/docs/api-reference#chat-completions
 - provider: xai
   models:
-    - name: grok-3-latest
+    - name: grok-3
       max_input_tokens: 131072
       input_price: 3
       output_price: 15
       supports_function_calling: true
-    - name: grok-3-fast-latest
+    - name: grok-3-fast
       max_input_tokens: 131072
       input_price: 5
       output_price: 25
       supports_function_calling: true
-    - name: grok-3-mini-latest
+    - name: grok-3-mini
       max_input_tokens: 131072
       input_price: 0.3
       output_price: 0.5
-    - name: grok-3-mini-fast-latest
+    - name: grok-3-mini-fast
       max_input_tokens: 131072
       input_price: 0.6
       output_price: 4
+    - name: grok-4
+      max_input_tokens: 256000
+      input_price: 3
+      output_price: 15
 
 # Links:
 #  - https://docs.perplexity.ai/models/model-cards
@@ -475,12 +484,20 @@
       input_price: 0
       output_price: 0
       supports_function_calling: true
-    - name: qwen-qwq-32b
+    - name: moonshotai/kimi-k2-instruct
       max_input_tokens: 131072
       input_price: 0
       output_price: 0
       supports_function_calling: true
     - name: qwen/qwen3-32b
+      max_input_tokens: 131072
+      input_price: 0
+      output_price: 0
+    - name: compound-beta
+      max_input_tokens: 131072
+      input_price: 0
+      output_price: 0
+    - name: compound-beta-mini
       max_input_tokens: 131072
       input_price: 0
       output_price: 0
@@ -505,7 +522,7 @@
       output_price: 10
       supports_vision: true
       supports_function_calling: true
-    - name: gemini-2.5-flash-lite-preview-06-17
+    - name: gemini-2.5-flash-lite
       max_input_tokens: 1048576
       max_output_tokens: 65536
       input_price: 0.1
@@ -916,6 +933,16 @@
       max_output_tokens: 8192
       input_price: 0.224
       output_price: 0.56
+    - name: qwen-coder-plus-latest
+      max_input_tokens: 131072
+      max_output_tokens: 8192
+      input_price: 0.49
+      output_price: 0.98
+    - name: qwen-coder-turbo-latest
+      max_input_tokens: 131072
+      max_output_tokens: 8192
+      input_price: 0.28
+      output_price: 0.84
     - name: qwen-vl-max-latest
       max_input_tokens: 30720
       max_output_tokens: 2048
@@ -928,6 +955,15 @@
       input_price: 0.21
       output_price: 0.63
       supports_vision: true
+    - name: qwen3-235b-a22b-instruct-2507
+      max_input_tokens: 131072
+      input_price: 0.28
+      output_price: 1.12
+      supports_function_calling: true
+    - name: qwen3-235b-a22b-thinking-2507
+      max_input_tokens: 131072
+      input_price: 0.28
+      output_price: 2.8
     - name: qwen3-235b-a22b
       max_input_tokens: 131072
       max_output_tokens: 8192
@@ -1033,6 +1069,12 @@
       output_price: 4.2
       supports_vision: true
       supports_function_calling: true
+    - name: kimi-k2-0711-preview
+      max_input_tokens: 131072
+      input_price: 0.56
+      output_price: 2.24
+      supports_vision: true
+      supports_function_calling: true
     - name: kimi-thinking-preview
       max_input_tokens: 131072
       input_price: 28
@@ -1061,41 +1103,55 @@
 #  - https://open.bigmodel.cn/dev/api#glm-4
 - provider: zhipuai
   models:
-    - name: glm-4-plus
+    - name: glm-4.5
       max_input_tokens: 131072
-      input_price: 0.7
-      output_price: 0.7
-      supports_function_calling: true
-    - name: glm-4-air
+      input_price: 0.28
+      output_price: 1.12
+    - name: glm-4.5-x
       max_input_tokens: 131072
-      input_price: 0.07
-      output_price: 0.07
+      input_price: 1.12
+      output_price: 4.48
       supports_function_calling: true
-    - name: glm-4-long
-      max_input_tokens: 1000000
-      max_output_tokens: 4096
-      input_price: 0.14
-      output_price: 0.14
+    - name: glm-4.5-air
+      max_input_tokens: 131072
+      input_price: 0.084
+      output_price: 0.56
+    - name: glm-4.5-airx
+      max_input_tokens: 131072
+      input_price: 0.56
+      output_price: 2.24
       supports_function_calling: true
-    - name: glm-4-flash-250414
+    - name: glm-4.5-flash
       max_input_tokens: 131072
       input_price: 0
       output_price: 0
-      supports_function_calling: true
+    - name: glm-4.1v-thinking-flashx
+      max_input_tokens: 65536
+      input_price: 0.28
+      output_price: 0.28
+      supports_vision: true
+    - name: glm-4.1v-thinking-flash
+      max_input_tokens: 65536
+      input_price: 0
+      output_price: 0
+      supports_vision: true
     - name: glm-4v-plus-0111
       max_input_tokens: 8192
-      input_price: 0.56
-      output_price: 0.56
-      supports_vision: true
-    - name: glm-4v-flash
-      max_input_tokens: 8192
-      input_price: 0
-      output_price: 0
+      input_price: 0.28
+      output_price: 0.28
       supports_vision: true
     - name: glm-z1-air
       max_input_tokens: 131072
+      input_price: 0.07
+      output_price: 0.07
+    - name: glm-z1-airx
+      max_input_tokens: 131072
       input_price: 0.7
       output_price: 0.7
+    - name: glm-z1-flashx
+      max_input_tokens: 131072
+      input_price: 0.014
+      output_price: 0.014
     - name: glm-z1-flash
       max_input_tokens: 131072
       input_price: 0
@@ -1265,7 +1321,7 @@
       output_price: 10
       supports_vision: true
       supports_function_calling: true
-    - name: google/gemini-2.5-flash-lite-preview-06-17
+    - name: google/gemini-2.5-flash-lite
       max_input_tokens: 1048576
       input_price: 0.1
       output_price: 0.4
@@ -1328,7 +1384,7 @@
       output_price: 15
       supports_vision: true
       supports_function_calling: true
-    - name: anthropic/claude-3-5-haiku
+    - name: anthropic/claude-3.5-haiku
       max_input_tokens: 200000
       max_output_tokens: 8192
       require_max_tokens: true
@@ -1375,10 +1431,15 @@
       max_input_tokens: 40960
       input_price: 0.5
       output_price: 1.5
-    - name: mistralai/devstral-small
+    - name: mistralai/devstral-medium
       max_input_tokens: 131072
-      input_price: 0.07
-      output_price: 0.1
+      input_price: 0.4
+      output_price: 2
+      supports_function_calling: true
+    - name: mistralai/devstral-small-2505
+      max_input_tokens: 131072
+      input_price: 0.06
+      output_price: 0.12
       supports_function_calling: true
     - name: mistralai/codestral-2501
       max_input_tokens: 256000
@@ -1440,6 +1501,20 @@
       input_price: 0.21
       output_price: 0.63
       supports_vision: true
+    - name: qwen/qwen3-235b-a22b-2507
+      max_input_tokens: 262144
+      input_price: 0.12
+      output_price: 0.59
+      supports_function_calling: true
+    - name: qwen/qwen3-235b-a22b-thinking-2507
+      max_input_tokens: 262144
+      input_price: 0.118
+      output_price: 0.118
+    - name: qwen/qwen3-coder
+      max_input_tokens: 262144
+      input_price: 0.3
+      output_price: 1.2
+      supports_function_calling: true
     - name: qwen/qwen3-235b-a22b
       max_input_tokens: 40960
       input_price: 0.15
@@ -1470,6 +1545,16 @@
       max_input_tokens: 32768
       input_price: 0.18
       output_price: 0.18
+    - name: moonshotai/kimi-k2
+      max_input_tokens: 63000
+      input_price: 0.14
+      output_price: 2.49
+      supports_function_calling: true
+    - name: x-ai/grok-4
+      max_input_tokens: 256000
+      input_price: 3
+      output_price: 15
+      supports_function_calling: true
     - name: x-ai/grok-3
       max_input_tokens: 131072
       input_price: 3
@@ -1536,18 +1621,6 @@
       max_input_tokens: 1000192
       input_price: 0.2
       output_price: 1.1
-    - name: thudm/glm-4-32b
-      max_input_tokens: 32000
-      input_price: 0.24
-      output_price: 0.24
-    - name: thudm/glm-z1-32b
-      max_input_tokens: 32000
-      input_price: 0.24
-      output_price: 0.24
-    - name: microsoft/phi-4-reasoning-plus
-      max_input_tokens: 32768
-      input_price: 0.07
-      output_price: 0.35
 
 # Links:
 #  - https://github.com/marketplace?type=models
@@ -1705,6 +1778,20 @@
       max_input_tokens: 131072
       input_price: 0.23
       output_price: 0.40
+    - name: Qwen/Qwen3-235B-A22B-Instruct-2507
+      max_input_tokens: 131072
+      input_price: 0.13
+      output_price: 0.6
+      supports_function_calling: true
+    - name: Qwen/Qwen3-235B-A22B-Thinking-2507
+      max_input_tokens: 131072
+      input_price: 0.13
+      output_price: 0.6
+    - name: Qwen/Qwen3-Coder-480B-A35B-Instruct
+      max_input_tokens: 131072
+      input_price: 0.4
+      output_price: 1.6
+      supports_function_calling: true
     - name: Qwen/Qwen3-235B-A22B
       max_input_tokens: 40960
       input_price: 0.15
@@ -1746,14 +1833,15 @@
       max_input_tokens: 32768
       input_price: 0.06
       output_price: 0.12
-    - name: mistralai/Devstral-Small-2505
+    - name: mistralai/Devstral-Small-2507
       max_input_tokens: 131072
-      input_price: 0.06
-      output_price: 0.12
-    - name: microsoft/phi-4-reasoning-plus
-      max_input_tokens: 32768
       input_price: 0.07
-      output_price: 0.35
+      output_price: 0.28
+    - name: moonshotai/Kimi-K2-Instruct
+      max_input_tokens: 131072
+      input_price: 0.55
+      output_price: 2.2
+      supports_function_calling: true
     - name: BAAI/bge-large-en-v1.5
       type: embedding
       input_price: 0.01
